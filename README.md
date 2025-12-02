@@ -5,7 +5,7 @@ This project contains code for a custom retail AI agent with a recommendation sy
 
 The project includes sample databases for testing purposed.
 
-# Setup
+### Setup
 Get API key. Setup a .env file with your API key. Adjust the get_api_function as needed if you are not using a google key.
 
 To run the agent, run the code from the top. 
