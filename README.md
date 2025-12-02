@@ -10,9 +10,9 @@ Get API key. Setup a .env file with your API key. Adjust the get_api_function as
 
 To run the agent, run the code from the top. 
 Go to the Runner and add in any prompt as desired.
-
-
-
+#
+#
+#
 
 
 ![Screenshot_2-12-2025_144728_www zara com](https://github.com/user-attachments/assets/49984d81-fdb7-418b-a577-4bf0bc553da4)
