@@ -28,16 +28,16 @@ returns_database: This database is a dictionary. Each item in the dictionary con
 
 ### Tools
 
-The item_recommendation tool takes in the userid and checks the customer's purchases by calling the get_purchase_history tool. It then calls the get_customer_returns tool and removes any items from the list produced to remove any returned items. Lastly it uses the product_style_database to fetch a list of similar items up to a total of 6 items.  
+The item_recommendation tool takes in the userid and checks the customer's purchases by calling the get_purchase_history tool. It then calls the get_customer_returns tool and removes any returned items from the list produced. Lastly it uses the product_style_database to fetch a list of similar items up to a total of 6.  
 
 #### Memory
 
-The agent uses ADK’s built‑in InMemoryMemoryService to provide session‑scoped memory. This allows the agent to hold context across multiple turns in a single conversation, such as remembering the active user ID (abigail454) or previously discussed preferences. The memory persists only for the duration of the session and is not stored permanently. 
-To ensure memory is updated consistently, we define an after_agent_callback (auto_save_to_memory) that automatically saves the session state into memory after each agent turn. 
+The agent uses ADK’s built‑in InMemoryMemoryService to provide session memory. This allows the agent to hold context across multiple turns in a single conversation, such as remembering the active user ID (abigail454) or previously discussed preferences. The memory persists only for the duration of the session and is not stored permanently. 
+To ensure memory is updated consistently, an after_agent_callback (auto_save_to_memory) is defined that automatically saves the session state into memory after each agent turn. 
 
 #### Logging
 
-The agent has an integrated LoggingPlugin in its runner configuration to provide observability. The logging plugin captures standardized traces of inputs, outputs, and tool calls, making it easier to debug, monitor, and audit agent behavior. This allows us to track how recommendations are generated, verify that memory is being updated correctly, and identify any errors or unexpected tool responses.
+The agent has an integrated LoggingPlugin in its runner configuration to provide observability. The logging plugin captures standardized traces of inputs, outputs, and tool calls, making it easier to debug, monitor, and audit agent behavior. This allows tracking of how recommendations are generated, verify that memory is being updated correctly, and identify any errors or unexpected tool responses.
 
 
 ### Setup
@@ -49,9 +49,7 @@ To run a new prompt, go to the "Test the Agent!" heading at the bottom and chang
 
 ## Potential Additions and Fixes
 
-The recommendation tool could include a rating system to rank the recommended items in order of relevance. 
-
-We could also have it call a get_popular_item tool, to add to the list of recommended items, in the case where the tool returns "none" or less than 6 items.
+The recommendation tool could include a rating system to rank the recommended items in order of relevance. We oould also add a "get_popular_item" tool to retrieve a list of the most popular items. This could be called by the "recommendation_tool" to add to the list of recommended items, in the case where the tool returns "none" or less than 6 items.
 
 
 ![Screenshot_2-12-2025_144728_www zara com](https://github.com/user-attachments/assets/49984d81-fdb7-418b-a577-4bf0bc553da4)
