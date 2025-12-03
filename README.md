@@ -16,19 +16,19 @@ The agent uses gemini-2.5-flash-lite LLM model for reasoning and planning. The a
 
 ### Databases included for Testing
 
-There are 3 databases included for testing
+There are 3 databases included for testing.
 
-customer_database: This database is dictionary. Each item contains a customer's username and userid.
+customer_database: This database is a dictionary consisting of key being the customer's username and value being the customer's userid.
 
-product_style_database: This database is a list of dictionaries. Each dicationary is a group of items that share at least 2 attributes. Each contains the product name and the associated product's UPC number.
+product_style_database: This database is a list of dictionaries. Each dictionary is a group of items that share at least 2 attributes. Each contains the product name and the associated product's UPC number.
 
-purchase_history_databse: This database is a ditionary. Each item consists of a customer userid and the list of UPC number for items purchased by that customer.
+purchase_history_databse: This database is a ditionary. Each item consists of a customer userid and the list of UPC number(s) for item(s) purchased by that customer.
 
-returns_database: Thie database is a dictionary. Each item in the dictionary consists of a customer userid and the list of UPC numbers for items returned by that customer
+returns_database: This database is a dictionary. Each item in the dictionary consists of a customer userid and the list of UPC numbers for items returned by that customer
 
 ### Tools
 
-The item_recommendation tool takes in the userid and checks the customer's purchases by calling the get_purchase_history tool. It then calls the get_customer_returns tool and removes any items from the list produced to remove any returne items. It then uses the product_style_database to fetch a list of similar items up to 6.  
+The item_recommendation tool takes in the userid and checks the customer's purchases by calling the get_purchase_history tool. It then calls the get_customer_returns tool and removes any items from the list produced to remove any returned items. Lastly it uses the product_style_database to fetch a list of similar items up to a total of 6 items.  
 
 #### Memory
 
@@ -51,7 +51,7 @@ To run a new prompt, go to the "Test the Agent!" heading at the bottom and chang
 
 The recommendation tool could include a rating system to rank the recommended items in order of relevance. 
 
-We could also have it call a get_popular_item tool, to return a list of recommended items, in the case that the tool returns "none" (this would occur if the customer has no purchase history.)
+We could also have it call a get_popular_item tool, to add to the list of recommended items, in the case where the tool returns "none" or less than 6 items.
 
 
 ![Screenshot_2-12-2025_144728_www zara com](https://github.com/user-attachments/assets/49984d81-fdb7-418b-a577-4bf0bc553da4)
