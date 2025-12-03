@@ -3,7 +3,7 @@ Custom AI Agent for Clothing Retailer
 
 This project contains code for a custom retail AI agent with a recommendation system. The agent considers past purchases and cross references these with any returns then recommends items that would suit the customer's tastes. The agent's functionality includes session memory and logging.
 
-The project includes sample databases for testing purposed.
+The project includes sample databases for testing purposes.
 
 ### Setup
 Setup a .env file with your API key. Adjust the get_api_function as needed if you are not using a google key.
