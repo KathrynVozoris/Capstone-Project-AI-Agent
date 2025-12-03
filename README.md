@@ -1,15 +1,34 @@
-# Capstone-Project-AI-Agent
-Custom AI Agent for Clothing Retailer
+## Customer Service Agent for Clothing Retailer
+### Custom AI Agent with Logging and Session Memory
 
-This project contains code for a custom retail AI agent with a recommendation system. The agent considers past purchases and cross references these with any returns then recommends items that would suit the customer's tastes. The agent's functionality includes session memory and logging.
+This project contains code for a custom retail AI agent with a recommendation system. The agent considers past purchases and cross references these with any returns, then recommends items that would suit the customer's tastes. It will look up returns and past purchases. 
 
-The project includes sample databases for testing purposes.
+The project includes databases for testing purposes, and simplified categorization of items for the recommendation system. 
+
+The agent's functionality includes logging and session memory.
+
+
+### Architecture and Methodology
+
+The agent's code is contained in the file ai-agent.ipynb.
+
+The agent uses gemini-2.5-flash-lite LLM model for reasoning and planning. The agent has access to 3 tools for answering user prompts: purchase_history, customer_returns, and item_recommendation. The item_recommendation tool recommends up to 6 items. 
+
+#### Memory
+
+The agent uses ADK’s built‑in InMemoryMemoryService to provide session‑scoped memory. This allows the agent to hold context across multiple turns in a single conversation, such as remembering the active user ID (abigail454) or previously discussed preferences. The memory persists only for the duration of the session and is not stored permanently. 
+To ensure memory is updated consistently, we define an after_agent_callback (auto_save_to_memory) that automatically saves the session state into memory after each agent turn. 
+
+#### Logging
+
+The agent has an integrated LoggingPlugin in its runner configuration to provide observability. The logging plugin captures standardized traces of inputs, outputs, and tool calls, making it easier to debug, monitor, and audit agent behavior. This allows us to track how recommendations are generated, verify that memory is being updated correctly, and identify any errors or unexpected tool responses.
+
 
 ### Setup
-Setup a .env file with your API key. Adjust the get_api_function as needed if you are not using a google key.
+Setup a .env file with your API key. 
 
-To run the agent, run the code from the top. 
-Go to the Runner and add in any prompt as desired.
+To run the agent, run ai-agent.ipynb from the top. 
+To run a new prompt, go to the "Test the Agent!" heading at the bottom and change the value of the "prompt" variable. 
 #
 #
 #
