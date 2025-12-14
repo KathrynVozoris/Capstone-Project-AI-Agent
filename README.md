@@ -49,7 +49,7 @@ To run a new prompt, go to the "Test the Agent!" heading at the bottom and chang
 
 ## Potential Additions and Fixes
 
-The recommendation tool could include a rating system to rank the recommended items in order of relevance. We oould also add a "get_popular_item" tool to retrieve a list of the most popular items. This could be called by the "recommendation_tool" to add to the list of recommended items, in the case where the tool returns "none" or less than 6 items.
+The recommendation tool could include a rating system to rank the recommended items in order of relevance. We could also add a "get_popular_item" tool to retrieve a list of the most popular items. This could be called by the "recommendation_tool" to add to the list of recommended items, in the case where the tool returns "none" or less than 6 items.
 
 
 ![Screenshot_2-12-2025_144728_www zara com](https://github.com/user-attachments/assets/49984d81-fdb7-418b-a577-4bf0bc553da4)
