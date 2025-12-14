@@ -20,7 +20,7 @@ There are 3 databases included for testing.
 
 customer_database: This database is a dictionary consisting of key being the customer's username and value being the customer's userid.
 
-product_style_database: This database is a list of dictionaries. Each dictionary is a group of items that share at least 2 attributes. Each contains the product name and the associated product's UPC number.
+product_style_database: This database is a list of dictionaries. Each dictionary is a group of items that share at least 2 attributes, e.g. long sleeved dresses (shares the 2 attributes dress and long sleeves). Each dictionary item consists of a key: the product name, and a value: the associated product's UPC number.
 
 purchase_history_databse: This database is a ditionary. Each item consists of a customer userid and the list of UPC number(s) for item(s) purchased by that customer.
 
